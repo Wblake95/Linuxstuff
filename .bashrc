@@ -1,6 +1,6 @@
 ### EXPORT ###
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vim'
+export VISUAL='vim'
 export HISTCONTROL=ignoreboth:erasedups
 export PAGER='most'
 
@@ -31,7 +31,7 @@ bind "set completion-ignore-case on"
 ### ALIASES ###
 
 #list
-alias ls='ls --color=auto'
+alias ls='ls -Alh --color=auto'
 alias la='ls -a'
 alias ll='ls -alFh'
 alias l='ls'
@@ -342,7 +342,7 @@ alias personal='cp -Rf /personal/* ~'
 [[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
 
 # reporting tools - install when not installed
-neofetch
+#neofetch
 #screenfetch
 #alsi
 #paleofetch
@@ -356,3 +356,4 @@ neofetch
 #sysinfo-retro
 #cpufetch
 #colorscript random
+pfetch
