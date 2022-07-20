@@ -1,4 +1,6 @@
 pfetch
+curl wttr.in/\?0m
+echo ""
 
 set -gx EDITOR vim
 set -gx Visual vim
@@ -8,3 +10,4 @@ if status is-interactive
 end
 
 alias ls="ls -Alh --color=auto"
+alias cht="curl cht.sh"
