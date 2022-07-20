@@ -117,7 +117,7 @@ unsetopt SHARE_HISTORY
 
 export HISTCONTROL=ignoreboth:erasedups
 
-# Make nano the default editor
+# Make vim the default editor
 
 export EDITOR='vim'
 export VISUAL='vim'
@@ -135,21 +135,7 @@ fi
 ### ALIASES ###
 
 #list
-alias ls='ls --color=auto'
-alias la='ls -a'
-alias ll='ls -alFh'
-alias l='ls'
-alias l.="ls -A | egrep '^\.'"
-
-#fix obvious typo's
-alias cd..='cd ..'
-alias pdw='pwd'
-alias udpate='sudo pacman -Syyu'
-alias upate='sudo pacman -Syyu'
-alias updte='sudo pacman -Syyu'
-alias updqte='sudo pacman -Syyu'
-alias upqll='paru -Syu --noconfirm'
-alias upal='paru -Syu --noconfirm'
+alias ls='ls -Alh --color=auto'
 
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
@@ -160,11 +146,7 @@ alias fgrep='fgrep --color=auto'
 alias df='df -h'
 
 #keyboard
-alias give-me-azerty-be="sudo localectl set-x11-keymap be"
 alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
-
-#setlocale
-alias setlocale="sudo localectl set-locale LANG=en_US.UTF-8"
 
 #pacman unlock
 alias unlock="sudo rm /var/lib/pacman/db.lck"
