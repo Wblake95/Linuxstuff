@@ -442,3 +442,5 @@ alias personal='cp -Rf /personal/* ~'
 #cpufetch
 #colorscript random
 pfetch
+
+bindkey -v
