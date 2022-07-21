@@ -55,3 +55,5 @@ set number ruler
 set conceallevel=0
 set spell
 set signcolumn=auto
+highlight OverLength  ctermbg=red
+match OverLength /\%80v.\+/
