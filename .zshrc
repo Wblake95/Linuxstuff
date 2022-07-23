@@ -17,6 +17,7 @@ export ZSH=/usr/share/oh-my-zsh/
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
 ZSH_THEME="random"
+# ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -131,25 +132,6 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
-### ALIASES ###
-
-#list
-alias ls='ls -Alh --color=auto'
-
-## Colorize the grep command output for ease of use (good for log files)##
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-
-# Aliases for software managment
-alias pacman='sudo pacman --color auto'
-
-#backup contents of /etc/skel to hidden backup folder in home/user
-alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
-
-#hblock (stop tracking with hblock)
-#use unhblock to stop using hblock
-alias unhblock="hblock -S none -D none"
 
 #create a file called .zshrc-personal and put all your personal aliases
 #in there. They will not be overwritten by skel.
@@ -158,8 +140,22 @@ alias unhblock="hblock -S none -D none"
 ###############################################################################
 ###################### Wesley stuff here  #####################################
 ###############################################################################
-# Launch on open
-neofetch
+
+### LAUNCH ON OPEN ###
+
+# This will launch neofetch with the weather of your area as the ascii
+neofetch --gap -53 --ascii "$(curl -s wttr.in\?0Qm)"
+# 'neofetch --gap -53' closes the gap between the information and the ascii
+	# gap is a negative number because space is really large
+# 'neofetch --ascii "$(path)"' will use that ascii instead of the default
+# 'curl -s' removes the 'progress meter'
+# 'wttr.in\?0qm' \ ignores ?, 0 = weather now, q removes location, m for metric
+# Resources:
+ 	# https://everything.curl.dev/cmdline/progressmeter
+ 	# man neofetch
+ 	# man curl
+
+### CONVENIENCE ###
 
 # Use ls after cd
 chpwd() ls
@@ -168,7 +164,21 @@ chpwd() ls
 bindkey -v
 
 # Make vim the default editor
-# Setting my editor, visual, and pager to vim
 export EDITOR='vim'
 export VISUAL='vim'
-export PAGER='most'
+export PAGER='most' # < works better than vim
+
+### ALIASES ###
+
+alias ls='ls -Alh --color=auto'
+
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+alias pacman='sudo pacman --color auto'
+
+alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
+
+#use unhblock to stop using hblock
+alias unhblock="hblock -S none -D none"
