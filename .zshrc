@@ -144,7 +144,7 @@ fi
 ### LAUNCH ON OPEN ###
 
 # This will launch neofetch with the weather of your area as the ascii
-neofetch --gap -53 --ascii "$(curl -s wttr.in\?0Qm)"
+neofetch --gap -45 --ascii "$(curl -s wttr.in\?0Qm)"
 # 'neofetch --gap -53' closes the gap between the information and the ascii
 	# gap is a negative number because space is really large
 # 'neofetch --ascii "$(path)"' will use that ascii instead of the default
@@ -154,20 +154,7 @@ neofetch --gap -53 --ascii "$(curl -s wttr.in\?0Qm)"
  	# https://everything.curl.dev/cmdline/progressmeter
  	# man neofetch
  	# man curl
-
-### CONVENIENCE ###
-
-# Use ls after cd
-chpwd() ls
-
-# Vi mode for line editing
-bindkey -v
-
-# Make vim the default editor
-export EDITOR='vim'
-export VISUAL='vim'
-export PAGER='most' # < works better than vim
-
+	
 ### ALIASES ###
 
 alias ls='ls -Alh --color=auto'
@@ -182,3 +169,16 @@ alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
 
 #use unhblock to stop using hblock
 alias unhblock="hblock -S none -D none"
+
+### CONVENIENCE ###
+
+# Use ls after cd
+chpwd() ls
+
+# Vi mode for line editing
+bindkey -v
+
+# Make vim the default editor
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='most' # < works better than vim
