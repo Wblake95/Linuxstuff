@@ -144,7 +144,7 @@ fi
 ### LAUNCH ON OPEN ###
 
 # This will launch neofetch with the weather of your area as the ascii
-neofetch --gap -45 --ascii "$(curl -s wttr.in\?0Qm)"
+neofetch --gap -45 --ascii "$(curl -s wttr.in\?0qm)"
 # 'neofetch --gap -53' closes the gap between the information and the ascii
 	# gap is a negative number because space is really large
 # 'neofetch --ascii "$(path)"' will use that ascii instead of the default
@@ -182,3 +182,6 @@ bindkey -v
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='most' # < works better than vim
+
+# Ranger
+RANGER_LOAD_DEFAULT_RC=FALSE
