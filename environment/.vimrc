@@ -1,4 +1,4 @@
-"source $VIMRUNTIME/defaults.vim
+source $VIMRUNTIME/defaults.vim
 set nocompatible "For vi
 
 set backup "Keep a backup file (restore to previous version)
@@ -19,23 +19,23 @@ syntax on
 filetype plugin on
 
 set number ruler
-set spell
-set incsearch
-set hlsearch
+set ignorecase
 set showcmd
 set wildmenu
-set list
-set listchars=tab:>-,trail:-,space:_
+set listchars=tab:>-,trail:-
+set foldmethod=marker
 
 let mapleader=","
+map <Leader>fs :set foldmethod=syntax<Enter>
+map <Leader>fm :set foldmethod=marker<Enter>
+map <Leader>s :set spell!<Enter>
+map <Leader>hs :set hlsearch!<Enter>
+map <C-l> :set list!<Enter>
 
-map <Leader>s :set foldmethod=syntax <Enter>
-map <Leader>m :set foldmethod=marker <Enter>
-
-map <C-l> :set nolist <Enter>
 map <C-j> <C-d>
 map <C-k> <C-u>
+
 imap ii <Esc>
 imap <C-p> ()<Esc>i
-imap <C-b> ()<Esc>i
-imap <C-c> ()<Esc>i
+imap <C-b> []<Esc>i
+imap <C-c> {}<Esc>i
