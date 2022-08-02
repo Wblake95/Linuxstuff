@@ -1,31 +1,37 @@
-" Get the defaults that most users want.
-source $VIMRUNTIME/defaults.vim
+"source $VIMRUNTIME/defaults.vim
+set nocompatible "For vi
 
-set backup		" keep a backup file (restore to previous version)
+set backup "Keep a backup file (restore to previous version)
 if has('persistent_undo')
-  set undofile	" keep an undo file (undo changes after closing)
+  set undofile "Keep an undo file (undo changes after closing)
 endif
 
-" Put these in an autocmd group, so that we can delete them easily.
+set signcolumn=auto "Text longer than 80 characters will be red
+highlight OverLength ctermbg=red
+match OverLength /\%80v.\+/
+
 augroup vimrcEx
   au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  autocmd FileType text setlocal textwidth=70
 augroup END
 
-" Add optional packages.
-"
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
-" The ! means the package won't be loaded right away but when plugins are
-" loaded during initialization.
-" if has('syntax') && has('eval')
-"   packadd! matchit
-" endif
+syntax on
+filetype plugin on
 
 set number ruler
 set spell
-set signcolumn=auto
-highlight OverLength  ctermbg=red
-match OverLength /\%80v.\+/
+set incsearch
+set hlsearch
+set showcmd
+set wildmenu
+set list
+set listchars=tab:>-,trail:-
+set listchars=space:-
+
+map <C-l> :set nolist <Enter>
+imap ii <Esc>
+map <C-j> <C-d>
+map <C-k> <C-u>
+imap <C-p> ()<Esc>i
+imap <C-b> ()<Esc>i
+imap <C-c> ()<Esc>i

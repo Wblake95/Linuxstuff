@@ -185,3 +185,4 @@ export PAGER='most' # < works better than vim
 
 # Ranger
 RANGER_LOAD_DEFAULT_RC=FALSE
+source ~/.bash.d/cht.sh
